@@ -25,9 +25,9 @@ func main() {
 	}
 
 	msgs, err := ch.Consume(
-		"TestQueue",
+		"GoQueue",
 		"",
-		true,
+		false,
 		false,
 		false,
 		false,

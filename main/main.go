@@ -26,8 +26,8 @@ func main() {
 	// with the instance and declare Queues that we can publish and
 	// subscribe to
 	q, err := ch.QueueDeclare(
-		"TestQueue",
-		false,
+		"ExpressQueue",
+		true,
 		false,
 		false,
 		false,
@@ -44,13 +44,13 @@ func main() {
 
 	// attempt to publish a message to the queue!
 	err = ch.Publish(
-		"",
-		"TestQueue",
+		"amq.direct",
+		"rota2",
 		false,
 		false,
 		amqp.Publishing{
 			ContentType: "text/plain",
-			Body:        []byte("Hello World"),
+			Body:        []byte("Hello Go"),
 		},
 	)
 
